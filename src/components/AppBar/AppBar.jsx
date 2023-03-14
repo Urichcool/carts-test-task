@@ -16,7 +16,7 @@ export const AppBar = () => {
             <AiFillHome />
             Home
           </AppHeaderNavLink>
-          <AppHeaderNavLink to={'Carts'}>
+          <AppHeaderNavLink to={'carts'}>
             <BsFillCartFill />
             Carts
           </AppHeaderNavLink>
