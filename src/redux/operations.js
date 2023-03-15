@@ -14,3 +14,17 @@ export const fetchCarts = createAsyncThunk(
     }
   }
 );
+
+
+export const deleteCart = createAsyncThunk(
+  'deleteCart',
+  async (cartId, thunkAPI) => {
+    try {
+      const response = await axios.delete(`carts/${cartId}`);
+      return response.data
+    }
+    catch (e) {
+      return thunkAPI.rejectWithValue(e.message)
+    }
+  }
+)

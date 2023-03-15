@@ -15,6 +15,7 @@ export const CartsListStyled = styled.ul`
 `;
 
 export const CartsListItemStyled = styled.li`
+position: relative;
   color: #cecccc;
   display: flex;
   align-items: center;
@@ -40,6 +41,30 @@ margin:0;
   }
   &:last-child {
     margin-bottom: 0;
+  }
+`;
+
+export const CartsDeleteButtonStyled = styled.button`
+position:absolute;
+top:10px;
+right:10px;
+background-color:transparent;
+  color: #cecccc;
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px, solid, #cecccc;
+  &:hover,
+  &:focus {
+    color: red;
+    transition: 500ms;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
   }
 `;
 

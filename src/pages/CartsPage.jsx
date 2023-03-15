@@ -22,7 +22,7 @@ export const CartsPage = () => {
         <title>Carts</title>
       </Helmet>
       {isLoading && (<Loader/>)}
-      {carts.length !== 0 && !isLoading &&(<CartsList />)}
+      {carts.length !== 0 &&(<CartsList />)}
     </AppContainerStyled>
   );
 };

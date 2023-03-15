@@ -5,6 +5,7 @@ import { CartsListItem } from './CartsListItem';
 
 export const CartsList = () => {
   const carts = useSelector(getCarts);
+ 
   return (
     <CartsListStyled>
       {carts.map(({ id, total, discountedTotal, userId }) => (
