@@ -8,6 +8,14 @@ const productsSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    deleteProduct(state, action) {
+      const index = state.items.findIndex(
+        product => product.id === action.payload
+      );
+      state.items.splice(index, 1);
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(fetchProductById.pending, state => {
@@ -24,6 +32,7 @@ const productsSlice = createSlice({
       }),
 });
 
+export const { deleteProduct } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;
 
 export const getProducts = state => state.products.items;

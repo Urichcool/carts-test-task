@@ -6,7 +6,7 @@ import { fetchCarts } from 'redux/carts/operations';
 import { AppContainerStyled } from 'components/App.styled';
 import { Helmet } from 'react-helmet';
 import { Loader } from 'components/Loader';
-import { UserAddCart } from 'components/Carts/UserAddCart';
+import { UserAddCart } from 'components/Products/UserAddCart';
 
 export const CartsPage = () => {
   const isLoading = useSelector(getIsLoading);
