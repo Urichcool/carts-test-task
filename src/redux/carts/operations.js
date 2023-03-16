@@ -28,3 +28,13 @@ export const deleteCart = createAsyncThunk(
     }
   }
 )
+
+export const addCart = createAsyncThunk('addCart', async (cart, thunkAPI) => {
+  try {
+    const response = await axios.post('carts/add', cart);
+    axios.defaults.headers = { 'Content-Type': 'application/json' };
+    return response.data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue(e.message);
+  }
+});

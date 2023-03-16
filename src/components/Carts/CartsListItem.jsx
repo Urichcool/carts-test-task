@@ -6,21 +6,22 @@ import {
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteCart } from 'redux/operations';
-import { getIsLoading } from 'redux/cartsSlice';
+import { deleteCart } from 'redux/carts/operations';
+import { getIsDeleting } from 'redux/carts/cartsSlice';
 import PropTypes from 'prop-types';
+import { ColorRing } from 'react-loader-spinner';
 
 export const CartsListItem = ({ total, discountedTotal, userId, id }) => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
+  const isDeleting = useSelector(getIsDeleting);
 
   return (
     <CartsListItemStyled>
       <CartsDeleteButtonStyled
         onClick={() => dispatch(deleteCart(id))}
-        disabled={isLoading}
+        disabled={isDeleting}
       >
-        <AiOutlineClose />
+        {isDeleting ? <ColorRing /> : <AiOutlineClose />}
       </CartsDeleteButtonStyled>
       <BsFillBasket2Fill />
       <CartsListItemTextStyled>Cart №{id}</CartsListItemTextStyled>
