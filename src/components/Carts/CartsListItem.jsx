@@ -14,7 +14,6 @@ import { ColorRing } from 'react-loader-spinner';
 export const CartsListItem = ({ total, discountedTotal, userId, id }) => {
   const dispatch = useDispatch();
   const isDeleting = useSelector(getIsDeleting);
-
   return (
     <CartsListItemStyled>
       <CartsDeleteButtonStyled

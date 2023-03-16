@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCarts, deleteCart } from './operations';
+import { fetchCarts, deleteCart, addCart } from './operations';
+
 
 const cartsSlice = createSlice({
   name: 'carts',
@@ -30,7 +31,7 @@ const cartsSlice = createSlice({
         state.isDeleting = false;
         state.error = action.payload;
         const index = state.items.findIndex(
-          contact => contact.id === action.payload.id
+          cart => cart.id === action.payload.id
         );
         state.items.splice(index, 1);
       })
@@ -38,9 +39,21 @@ const cartsSlice = createSlice({
         state.isDeleting = false;
         state.error = null;
         const index = state.items.findIndex(
-          contact => contact.id === action.payload.id
+          cart => cart.id === action.payload.id
         );
         state.items.splice(index, 1);
+      })
+      .addCase(addCart.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addCart.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(addCart.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items.push(action.payload);
       }),
 });
 

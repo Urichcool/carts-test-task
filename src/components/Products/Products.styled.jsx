@@ -28,7 +28,7 @@ export const ProductAddLabelStyled = styled.label`
 
 export const ProductAddInputStyled = styled.input`
   margin-left: 5px;
-  width: 18px;
+  width: 40px;
   outline: none;
   border-radius: 2px;
   border: 1px solid gray;
@@ -59,6 +59,7 @@ export const ProductAddButtonStyled = styled.button`
   svg {
     width: 20px;
     height: 20px;
+    margin-left: 5px;
   }
 `;
 
@@ -69,13 +70,7 @@ align-items: center;
 justify-content: center;
   margin: 0;
   padding: 0;
- 
-  @media (min-width: 468px) {
-
-  }
-  @media (min-width: 768px) {
-   
-  }
+margin-bottom: 20px;
 `;
 
 export const ProductsListItemStyled = styled.li`
@@ -84,7 +79,7 @@ position: relative;
   padding: 10px;
   border-radius: 4px;
   background-color: #1d1d1d;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -136,4 +131,27 @@ export const ProductsListEmptyTextStyled = styled.p`
   display: flex;
   justify-content: center;
   color: red;
+`;
+
+export const NewCartAddButtonStyled = styled.button`
+  font-size: 16px;
+  color: #cecccc;
+  background-color: #1794dd;
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  &:hover,
+  &:focus {
+    color: #de07f1;
+    transition: 500ms;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
 `;

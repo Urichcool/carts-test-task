@@ -22,10 +22,11 @@ export const CartsPage = () => {
       <Helmet>
         <title>Carts</title>
       </Helmet>
-      {isLoading && <Loader />}
-      {carts.length !== 0 && !isLoading && (
+      <UserAddCart />
+      {carts.length !== 0 && (
         <>
-          <UserAddCart />
+          {isLoading && <Loader />}
+
           <CartsList />
         </>
       )}

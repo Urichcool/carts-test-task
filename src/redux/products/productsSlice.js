@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchProductById } from './operations';
+import { addCart } from 'redux/carts/operations';
 
 const productsSlice = createSlice({
   name: 'products',
@@ -29,6 +30,11 @@ const productsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
+      })
+      .addCase(addCart.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = [];
       }),
 });
 
