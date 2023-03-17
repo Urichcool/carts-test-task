@@ -23,8 +23,8 @@ export const CartsListItem = ({ total, discountedTotal, userId, id }) => {
         {isDeleting ? <ColorRing /> : <AiOutlineClose />}
       </CartsDeleteButtonStyled>
       <BsFillBasket2Fill />
-      <CartsListItemTextStyled>Cart №{id}</CartsListItemTextStyled>
       <CartsListItemTextStyled>User number: {userId}</CartsListItemTextStyled>
+    
       <CartsListItemTextStyled>Total: {total}</CartsListItemTextStyled>
       <CartsListItemTextStyled>
         Discounted Total: {discountedTotal}

@@ -30,10 +30,7 @@ export const UserAddCart = () => {
     if (id === '' || quantity === '') {
       return;
     }
-    if (products.some(product => product.id === Number(id))) {
-      e.currentTarget.reset();
-      return;
-    }
+    
     dispatch(fetchProductById({ id, quantity }));
     e.currentTarget.reset();
   };

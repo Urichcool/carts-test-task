@@ -23,13 +23,8 @@ export const CartsPage = () => {
         <title>Carts</title>
       </Helmet>
       <UserAddCart />
-      {carts.length !== 0 && (
-        <>
-          {isLoading && <Loader />}
-
-          <CartsList />
-        </>
-      )}
+      {isLoading && <Loader />}
+      {carts.length !== 0 && <CartsList />}
     </AppContainerStyled>
   );
 };
