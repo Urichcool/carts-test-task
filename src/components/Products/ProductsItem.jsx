@@ -6,6 +6,7 @@ import {
 import { AiOutlineClose } from 'react-icons/ai';
 import { deleteProduct } from 'redux/products/productsSlice';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const ProductsItem = ({ title, quantity, id }) => {
   const dispatch = useDispatch();
@@ -23,4 +24,11 @@ export const ProductsItem = ({ title, quantity, id }) => {
       <ProductsListTextStyled>Quantity: {quantity}</ProductsListTextStyled>
     </ProductsListItemStyled>
   );
+};
+
+
+ProductsItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  quantity: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
 };

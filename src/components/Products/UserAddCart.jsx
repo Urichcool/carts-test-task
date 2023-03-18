@@ -30,7 +30,11 @@ export const UserAddCart = () => {
     if (id === '' || quantity === '') {
       return;
     }
-    
+
+    if (products.some(product => Number(id) ===  product.id)) {
+      return
+    }
+
     dispatch(fetchProductById({ id, quantity }));
     e.currentTarget.reset();
   };
@@ -72,12 +76,17 @@ export const UserAddCart = () => {
         <>
           <ProductsListStyled>
             {products.map(({ title, quantity, id }) => (
-              <ProductsItem key={id} title={title} quantity={quantity} />
+              <ProductsItem
+                key={id}
+                title={title}
+                quantity={quantity}
+                id={id}
+              />
             ))}
           </ProductsListStyled>
           <ProductAddFormStyled onSubmit={handleCartSubmit}>
             <ProductAddLabelStyled>
-              User ID:
+              User number:
               <ProductAddInputStyled type={'number'}></ProductAddInputStyled>
             </ProductAddLabelStyled>
             <NewCartAddButtonStyled>

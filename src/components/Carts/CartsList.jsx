@@ -9,16 +9,16 @@ export const CartsList = () => {
 
   return (
     <CartsListStyled>
-      {carts.map(cart => {
-       return (
-         <CartsListItem
-           key={carts.indexOf(cart) + 1}
-           total={cart.total}
-           discountedTotal={cart.discountedTotal}
-           userId={cart.userId}
-           id={cart.id}
-         />
-       );
+      {carts.map(({ id, total, discountedTotal, userId }) => {
+        return (
+          <CartsListItem
+            key={id}
+            total={total}
+            discountedTotal={discountedTotal}
+            userId={userId}
+            id={id}
+          />
+        );
       })}
     </CartsListStyled>
   );
