@@ -29,11 +29,11 @@ export const UserAddCart = () => {
     const id = e.currentTarget.elements[0].value;
     const quantity = e.currentTarget.elements[1].value;
     if (id === '' || quantity === '') {
-      return toast.warn("Oops, you are missing a required field");
+      return toast.warn('Oops, you are missing a required field');
     }
 
-    if (products.some(product => Number(id) ===  product.id)) {
-    return toast.warn('This product is already in cart');
+    if (products.some(product => Number(id) === product.id)) {
+      return toast.warn('This product is already in cart');
     }
 
     dispatch(fetchProductById({ id, quantity }));
@@ -45,7 +45,7 @@ export const UserAddCart = () => {
     const userId = e.currentTarget.elements[0].value;
 
     if (userId === '') {
-      return toast.warn('Please enter your user number');;
+      return toast.warn('Please enter your user number');
     }
 
     const newCart = products.map(({ id, quantity }) => {
@@ -75,7 +75,8 @@ export const UserAddCart = () => {
           ></ProductAddInputStyled>
         </ProductAddLabelStyled>
         <ProductAddButtonStyled>
-          <span>Add product</span><IoMdAddCircle />
+          <span>Add product</span>
+          <IoMdAddCircle />
         </ProductAddButtonStyled>
       </ProductAddFormStyled>
       {isLoading && <Loader />}

@@ -5,14 +5,12 @@ import { CartsListItem } from './CartsListItem';
 import { useState, useCallback } from 'react';
 import { ChartModal } from 'components/Modal/ChartModal';
 
-
-
 export const CartsList = () => {
   const carts = useSelector(getCarts);
   const [showModal, setShowModal] = useState(false);
-  const [cart, setCart] = useState({})
+  const [cart, setCart] = useState({});
 
- const openModal = e => {
+  const openModal = e => {
     if (e.target.closest('a')) {
       const eventElement = carts.find(
         cart => cart.id.toString() === e.target.closest('a').id
@@ -28,20 +26,20 @@ export const CartsList = () => {
 
   return (
     <>
-    <CartsListStyled onClick={openModal}>
-      {carts.map(({ id, total, discountedTotal, userId }) => {
-        return (
-          <CartsListItem
-            key={id}
-            total={total}
-            discountedTotal={discountedTotal}
-            userId={userId}
-            id={id}
-          />
-        );
-      })}
-    </CartsListStyled>
+      <CartsListStyled onClick={openModal}>
+        {carts.map(({ id, total, discountedTotal, userId }) => {
+          return (
+            <CartsListItem
+              key={id}
+              total={total}
+              discountedTotal={discountedTotal}
+              userId={userId}
+              id={id}
+            />
+          );
+        })}
+      </CartsListStyled>
       {showModal && <ChartModal cart={cart} onClose={togleModal} />}
-      </>
+    </>
   );
 };

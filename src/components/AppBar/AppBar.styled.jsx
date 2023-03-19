@@ -16,9 +16,9 @@ export const AppHeaderStyled = styled.header`
 `;
 
 export const AppHeaderNav = styled.nav`
-    display: flex;
-    align-items: center;
-`
+  display: flex;
+  align-items: center;
+`;
 
 export const AppHeaderNavLink = styled(NavLink)`
   text-decoration: none;
@@ -44,5 +44,3 @@ export const AppHeaderNavLink = styled(NavLink)`
     margin-right: 5px;
   }
 `;
-
-

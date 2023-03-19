@@ -2,7 +2,7 @@ import {
   CartsListItemStyled,
   CartsListItemTextStyled,
   CartsDeleteButtonStyled,
-  CartsListLinkStyled
+  CartsListLinkStyled,
 } from './CartsList.styled';
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';

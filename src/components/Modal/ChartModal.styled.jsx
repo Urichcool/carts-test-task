@@ -19,20 +19,29 @@ export const ChartModalBodyStyled = styled.div`
 `;
 
 export const ChartModalContainerStyled = styled.div`
-position: relative;
+  position: relative;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-width: 1200px;
-border-radius: 4px;
+  border-radius: 4px;
+  width: 280px;
+  @media (min-width: 480px) {
+    width: 450px;
+  }
+  @media (min-width: 768px) {
+    width: 730px;
+  }
+  @media (min-width: 1280px) {
+    width: 1200px;
+  }
 `;
 
 export const ChartModalCloseButtonStyled = styled.button`
   position: absolute;
   top: 10px;
-  border:none;
+  border: none;
   right: 10px;
   background-color: transparent;
   margin: 0;
@@ -50,5 +59,3 @@ export const ChartModalCloseButtonStyled = styled.button`
     height: 20px;
   }
 `;
-
-

@@ -3,8 +3,8 @@ import { ThreeDots } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
-      <AppLoaderStyled>
+    <AppLoaderStyled>
       <ThreeDots color="orange" />
     </AppLoaderStyled>
-  )
-}
+  );
+};

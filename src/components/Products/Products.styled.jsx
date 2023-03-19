@@ -18,7 +18,7 @@ export const ProductAddFormStyled = styled.form`
 
 export const ProductAddLabelStyled = styled.label`
   display: flex;
- 
+
   align-items: center;
   font-weight: 500;
   margin-right: 10px;
@@ -62,7 +62,7 @@ export const ProductAddButtonStyled = styled.button`
     height: 20px;
     margin-left: 5px;
     @media (max-width: 479px) {
-      margin:0;
+      margin: 0;
     }
   }
   span {
@@ -74,18 +74,17 @@ export const ProductAddButtonStyled = styled.button`
 `;
 
 export const ProductsListStyled = styled.ul`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-margin-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ProductsListItemStyled = styled.li`
-
-position: relative;
+  position: relative;
   padding: 10px;
   border-radius: 4px;
   background-color: #1d1d1d;
@@ -96,7 +95,6 @@ position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 `;
 
 export const ProductsListTextStyled = styled.p`
@@ -110,10 +108,9 @@ export const ProductsListTextStyled = styled.p`
     margin-right: 5px;
   }
   @media (max-width: 479px) {
-   width: 150px;
+    width: 150px;
   }
 `;
-
 
 export const ProductDeleteButtonStyled = styled.button`
   position: absolute;

@@ -33,7 +33,7 @@ const productsSlice = createSlice({
         state.error = null;
         state.items.push(action.payload);
       })
-      .addCase(addCart.fulfilled, (state) => {
+      .addCase(addCart.fulfilled, state => {
         state.isLoading = false;
         state.error = null;
         state.items = [];
@@ -46,13 +46,11 @@ const persistConfig = {
   whitelist: ['items'],
 };
 
-
-
 export const { deleteProduct } = productsSlice.actions;
 export const productsReducer = persistReducer(
   persistConfig,
   productsSlice.reducer
-)
+);
 
 export const getProducts = state => state.products.items;
 export const getProductsIsLoading = state => state.products.isLoading;
