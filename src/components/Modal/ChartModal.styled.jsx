@@ -26,7 +26,7 @@ export const ChartModalContainerStyled = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 4px;
-  width: 280px;
+  width: 270px;
   @media (min-width: 480px) {
     width: 450px;
   }
