@@ -105,12 +105,12 @@ export const ProductsListTextStyled = styled.p`
   margin: 0;
   display: flex;
   align-items: center;
-  margin-right: 150px;
+  width: 375px;
   svg {
     margin-right: 5px;
   }
-  @media (min-width: 480px) {
-   margin-right: 275px;
+  @media (max-width: 479px) {
+   width: 150px;
   }
 `;
 

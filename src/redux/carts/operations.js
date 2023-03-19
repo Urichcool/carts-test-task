@@ -4,17 +4,14 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://dummyjson.com/';
 
-export const fetchCarts = createAsyncThunk(
-  'getCarts',
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get('carts');
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
+export const fetchCarts = createAsyncThunk('getCarts', async (_, thunkAPI) => {
+  try {
+    const response = await axios.get('carts');
+    return response.data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue(e.message);
   }
-);
+});
 
 
 export const deleteCart = createAsyncThunk(
@@ -22,13 +19,12 @@ export const deleteCart = createAsyncThunk(
   async (cartId, thunkAPI) => {
     try {
       const response = await axios.delete(`carts/${cartId}`);
-      return response.data
-    }
-    catch {
-      return thunkAPI.rejectWithValue(cartId)
+      return response.data;
+    } catch {
+      return thunkAPI.rejectWithValue(cartId);
     }
   }
-)
+);
 
 export const addCart = createAsyncThunk('addCart', async (cart, thunkAPI) => {
   try {
@@ -36,7 +32,7 @@ export const addCart = createAsyncThunk('addCart', async (cart, thunkAPI) => {
     axios.defaults.headers = { 'Content-Type': 'application/json' };
     return response.data;
   } catch (e) {
-     toast.error(`User with id: ${cart.userId} doesn't exist`);
+    toast.error(`User with id: ${cart.userId} doesn't exist`);
     return thunkAPI.rejectWithValue(e.message);
   }
 });

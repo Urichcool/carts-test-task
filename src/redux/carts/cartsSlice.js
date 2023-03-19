@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCarts, deleteCart, addCart } from './operations';
+import { fetchCarts, deleteCart, addCart, fetchCartById } from './operations';
 
 
 const cartsSlice = createSlice({
@@ -30,9 +30,7 @@ const cartsSlice = createSlice({
       .addCase(deleteCart.rejected, (state, action) => {
         state.isDeleting = false;
         state.error = action.payload;
-        const index = state.items.findIndex(
-          cart => cart.id === action.payload
-        );
+        const index = state.items.findIndex(cart => cart.id === action.payload);
         state.items.splice(index, 1);
       })
       .addCase(deleteCart.fulfilled, (state, action) => {
@@ -53,7 +51,7 @@ const cartsSlice = createSlice({
       .addCase(addCart.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        action.payload.id = state.items.length + 1
+        action.payload.id = state.items.length + 1;
         state.items.push(action.payload);
       }),
 });
