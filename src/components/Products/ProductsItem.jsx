@@ -26,9 +26,8 @@ export const ProductsItem = ({ title, quantity, id }) => {
   );
 };
 
-
 ProductsItem.propTypes = {
   title: PropTypes.string.isRequired,
   quantity: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };

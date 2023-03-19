@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCarts, deleteCart, addCart, fetchCartById } from './operations';
+import { fetchCarts, deleteCart, addCart} from './operations';
 
 
 const cartsSlice = createSlice({
@@ -61,4 +61,3 @@ export const cartsReducer = cartsSlice.reducer;
 export const getCarts = state => state.carts.items;
 export const getIsLoading = state => state.carts.isLoading;
 export const getIsDeleting = state => state.carts.isDeleting;
-export const getError = state => state.carts.error;

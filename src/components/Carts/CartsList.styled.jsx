@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
 export const CartsListStyled = styled.ul`
   display: grid;
@@ -12,7 +11,7 @@ export const CartsListStyled = styled.ul`
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  padding-top:50px;
+  padding-top: 50px;
   padding-bottom: 50px;
 `;
 
@@ -33,7 +32,7 @@ export const CartsListItemStyled = styled.li`
 `;
 
 export const CartsListItemTextStyled = styled.p`
-margin:0;
+  margin: 0;
   margin-bottom: 5px;
   &:first-of-type {
     margin-top: 5px;
@@ -46,10 +45,10 @@ margin:0;
 `;
 
 export const CartsDeleteButtonStyled = styled.button`
-position:absolute;
-top:10px;
-right:10px;
-background-color:transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: black;
   color: #cecccc;
   margin: 0;
   padding: 5px;
@@ -69,8 +68,8 @@ background-color:transparent;
   }
 `;
 
-
-export const CartsListLinkStyled = styled(Link)`
+export const CartsListLinkStyled = styled.a`
+  cursor: pointer;
   color: #cecccc;
   display: flex;
   align-items: center;
@@ -79,6 +78,3 @@ export const CartsListLinkStyled = styled(Link)`
   padding-bottom: 30px;
   text-decoration: none;
 `;
-
-
-
