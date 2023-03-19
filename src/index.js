@@ -11,12 +11,12 @@ import { Loader } from 'components/Loader';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <Provider store={store}>
-    <PersistGate loading={<Loader/>} persistor={persistor}> 
-      <BrowserRouter >
-        <App />
-      </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
+        <BrowserRouter basename="/carts-test-task/">
+          <App />
+        </BrowserRouter>
       </PersistGate>
     </Provider>
- </React.StrictMode>
+  </React.StrictMode>
 );
