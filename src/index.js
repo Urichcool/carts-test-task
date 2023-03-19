@@ -10,13 +10,13 @@ import { persistor } from './redux/storage'
 import { Loader } from 'components/Loader';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+  <React.StrictMode>
   <Provider store={store}>
     <PersistGate loading={<Loader/>} persistor={persistor}> 
-      <BrowserRouter>
+      <BrowserRouter >
         <App />
       </BrowserRouter>
       </PersistGate>
     </Provider>
-  // </React.StrictMode>
+ </React.StrictMode>
 );
