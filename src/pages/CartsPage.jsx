@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 import { Loader } from 'components/Loader';
 import { UserAddCart } from 'components/Products/UserAddCart';
 
-export const CartsPage = () => {
+const CartsPage = () => {
   const isLoading = useSelector(getIsLoading);
   const carts = useSelector(getCarts);
   const dispatch = useDispatch();
@@ -28,3 +28,5 @@ export const CartsPage = () => {
     </AppContainerStyled>
   );
 };
+
+export default CartsPage;

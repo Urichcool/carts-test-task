@@ -18,6 +18,7 @@ export const ProductAddFormStyled = styled.form`
 
 export const ProductAddLabelStyled = styled.label`
   display: flex;
+ 
   align-items: center;
   font-weight: 500;
   margin-right: 10px;
@@ -60,6 +61,15 @@ export const ProductAddButtonStyled = styled.button`
     width: 20px;
     height: 20px;
     margin-left: 5px;
+    @media (max-width: 479px) {
+      margin:0;
+    }
+  }
+  span {
+    display: block;
+    @media (max-width: 479px) {
+      display: none;
+    }
   }
 `;
 
@@ -74,7 +84,7 @@ margin-bottom: 20px;
 `;
 
 export const ProductsListItemStyled = styled.li`
-width:300px;
+
 position: relative;
   padding: 10px;
   border-radius: 4px;
@@ -95,8 +105,12 @@ export const ProductsListTextStyled = styled.p`
   margin: 0;
   display: flex;
   align-items: center;
+  margin-right: 150px;
   svg {
     margin-right: 5px;
+  }
+  @media (min-width: 480px) {
+   margin-right: 275px;
   }
 `;
 

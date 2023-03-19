@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchProductById } from './operations';
 import { addCart } from 'redux/carts/operations';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const productsSlice = createSlice({
   name: 'products',
@@ -38,8 +40,19 @@ const productsSlice = createSlice({
       }),
 });
 
+const persistConfig = {
+  key: 'products',
+  storage,
+  whitelist: ['items'],
+};
+
+
+
 export const { deleteProduct } = productsSlice.actions;
-export const productsReducer = productsSlice.reducer;
+export const productsReducer = persistReducer(
+  persistConfig,
+  productsSlice.reducer
+)
 
 export const getProducts = state => state.products.items;
 export const getProductsIsLoading = state => state.products.isLoading;

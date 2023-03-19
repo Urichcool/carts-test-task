@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://dummyjson.com/';
 
@@ -35,6 +36,7 @@ export const addCart = createAsyncThunk('addCart', async (cart, thunkAPI) => {
     axios.defaults.headers = { 'Content-Type': 'application/json' };
     return response.data;
   } catch (e) {
+     toast.error(`User with id: ${cart.userId} doesn't exist`);
     return thunkAPI.rejectWithValue(e.message);
   }
 });

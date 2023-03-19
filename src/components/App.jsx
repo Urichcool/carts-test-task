@@ -1,7 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import { Layout } from './Layout';
-import { HomePage } from 'pages/HomePage';
-import { CartsPage } from 'pages/CartsPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const routes = {
+  HomePage: lazy(() => import('../pages/HomePage')),
+  CartsPage: lazy(() => import('../pages/CartsPage'))
+};
+
+const {HomePage, CartsPage} = routes
 
 export const App = () => {
   return (
@@ -9,9 +17,12 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/carts" element={<CartsPage />}/>
+          <Route path="/carts" element={<CartsPage />} />
+           <Route path=":cartId" element={<div></div>}/>
         </Route>
+        <Route path="*" element={<Layout />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import {
   CartsListItemStyled,
   CartsListItemTextStyled,
   CartsDeleteButtonStyled,
+  CartsListLinkStyled
 } from './CartsList.styled';
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -22,13 +23,15 @@ export const CartsListItem = ({ total, discountedTotal, userId, id }) => {
       >
         {isDeleting ? <ColorRing /> : <AiOutlineClose />}
       </CartsDeleteButtonStyled>
-      <BsFillBasket2Fill />
-      <CartsListItemTextStyled>User number: {userId}</CartsListItemTextStyled>
-    
-      <CartsListItemTextStyled>Total: {total}</CartsListItemTextStyled>
-      <CartsListItemTextStyled>
-        Discounted Total: {discountedTotal}
-      </CartsListItemTextStyled>
+      <CartsListLinkStyled to={`${id}`}>
+        <BsFillBasket2Fill />
+        <CartsListItemTextStyled>User number: {userId}</CartsListItemTextStyled>
+
+        <CartsListItemTextStyled>Total: {total}</CartsListItemTextStyled>
+        <CartsListItemTextStyled>
+          Discounted Total: {discountedTotal}
+        </CartsListItemTextStyled>
+      </CartsListLinkStyled>
     </CartsListItemStyled>
   );
 };

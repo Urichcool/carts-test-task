@@ -17,6 +17,7 @@ import { BiCartAdd } from 'react-icons/bi';
 import { IoMdAddCircle } from 'react-icons/io';
 import { Loader } from 'components/Loader';
 import { addCart } from 'redux/carts/operations';
+import { toast } from 'react-toastify';
 
 export const UserAddCart = () => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ export const UserAddCart = () => {
     const id = e.currentTarget.elements[0].value;
     const quantity = e.currentTarget.elements[1].value;
     if (id === '' || quantity === '') {
-      return;
+      return toast.warn("Oops, you are missing a required field");
     }
 
     if (products.some(product => Number(id) ===  product.id)) {
-      return
+    return toast.warn('This product is already in cart');
     }
 
     dispatch(fetchProductById({ id, quantity }));
@@ -44,7 +45,7 @@ export const UserAddCart = () => {
     const userId = e.currentTarget.elements[0].value;
 
     if (userId === '') {
-      return;
+      return toast.warn('Please enter your user number');;
     }
 
     const newCart = products.map(({ id, quantity }) => {
@@ -57,18 +58,24 @@ export const UserAddCart = () => {
 
   return (
     <>
-      <ProductAddFormTextStyled>Add new cart</ProductAddFormTextStyled>
+      <ProductAddFormTextStyled>Add a new cart</ProductAddFormTextStyled>
       <ProductAddFormStyled onSubmit={handleProductSubmit}>
         <ProductAddLabelStyled>
           Product ID:
-          <ProductAddInputStyled type={'number'}></ProductAddInputStyled>
+          <ProductAddInputStyled
+            type={'number'}
+            min={'0'}
+          ></ProductAddInputStyled>
         </ProductAddLabelStyled>
         <ProductAddLabelStyled>
           Quantity:
-          <ProductAddInputStyled type={'number'}></ProductAddInputStyled>
+          <ProductAddInputStyled
+            type={'number'}
+            min={'0'}
+          ></ProductAddInputStyled>
         </ProductAddLabelStyled>
         <ProductAddButtonStyled>
-          Add product <IoMdAddCircle />
+          <span>Add product</span><IoMdAddCircle />
         </ProductAddButtonStyled>
       </ProductAddFormStyled>
       {isLoading && <Loader />}
@@ -87,7 +94,10 @@ export const UserAddCart = () => {
           <ProductAddFormStyled onSubmit={handleCartSubmit}>
             <ProductAddLabelStyled>
               User number:
-              <ProductAddInputStyled type={'number'}></ProductAddInputStyled>
+              <ProductAddInputStyled
+                type={'number'}
+                min={'0'}
+              ></ProductAddInputStyled>
             </ProductAddLabelStyled>
             <NewCartAddButtonStyled>
               Add cart <BiCartAdd />

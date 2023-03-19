@@ -1,4 +1,3 @@
-
 import { HomeTextStyled } from './Home.styled';
 
 export const Home = () => {
