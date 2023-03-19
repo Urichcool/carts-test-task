@@ -1,4 +1,4 @@
-Carts-app
+Carts-app,
 Technologies used:
 - reactJs
 - @emotion-styled-components       
