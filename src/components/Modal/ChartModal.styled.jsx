@@ -11,6 +11,7 @@ export const ChartModalOverlayStyled = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1200;
+  overflow-y: scroll;
 `;
 
 export const ChartModalBodyStyled = styled.div`
